@@ -39,4 +39,5 @@ filetype plugin indent on
 
 if has('autocmd')
   au FileType c,cpp set ts=4 sw=4
+  au FileType python set ts=2 sw=2
 endif
