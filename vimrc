@@ -31,6 +31,8 @@ set scrolloff=8
 
 map <silent> /<cr> :nohlsearch<cr>
 
+set clipboard=unnamed
+
 set pastetoggle=<F2>
 syntax spell toplevel
 map <F12> :set spell! spelllang=en_us<CR>
