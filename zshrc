@@ -16,6 +16,8 @@ compinit
 ## Prompt
 PROMPT=$'%{\e[0;31m%}%n@%m%{\e[0m%}:%{\e[0;32m%}%1~%{\e[0m%}\$ '
 
+WORDCHARS=${WORDCHARS//['\/.&']}
+
 ## Aliases
 alias cd..='cd ..'
 alias rm='rm -i'
