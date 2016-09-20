@@ -20,26 +20,38 @@ set showmode
 set textwidth=72
 set showmatch
 
+set scrolloff=7
+
+set autoread
+set noswapfile
+set nobackup
+set nowb
+
+nmap <space> /
+nmap <c-space> ?
+nmap <silent> <space><cr> :nohlsearch<cr>
 set ignorecase
 set smartcase
 set incsearch
 set hlsearch
 
-set autoread
-set showmode
-set scrolloff=8
-
-map <silent> /<cr> :nohlsearch<cr>
-
 set clipboard=unnamed
 
+map <F3> :set spell! spelllang=en_us<CR>
 set pastetoggle=<F2>
 syntax spell toplevel
-map <F12> :set spell! spelllang=en_us<CR>
 
+syntax on
+filetype on
+filetype indent on
+filetype plugin on
 filetype plugin indent on
 
 if has('autocmd')
-  au FileType c,cpp set ts=4 sw=4
+  au FileType c,cpp set ts=4 sw=4 textwidth=80
   au FileType python set ts=2 sw=2
+  au BufRead,BufNewFile *.xpc set filetype=c
 endif
+
+set tags=tags;/
+source /home/naveenks/Documents/myconfigs/vim/cscope_maps.vim
