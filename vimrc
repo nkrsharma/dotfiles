@@ -1,6 +1,8 @@
 set encoding=utf-8
 set nocompatible
 syntax on
+set background=dark
+colorscheme solarized
 
 " Indentation
 set autoindent
