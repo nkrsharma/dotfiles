@@ -1,14 +1,35 @@
-Config { font = "-bitstream-charter-*-r-*-*-14-*-100-*-*-78-*-*"
+Config { font = "*-terminus-bold-r-normal-*-12-*-*-*-*-*-iso8859-*"
        , bgColor = "black"
        , fgColor = "#f3f3f3"
        , position = Top
-       , commands = [ Run Cpu ["-L","3","-H","50","--normal","green","--high","red", "--low", "#49ecec"] 10
-                    , Run Memory ["-t", "Mem: <usedratio>%", "-H", "35", "--normal", "#49ecec", "--high", "yellow", "--low", "green"] 10
+       , persistent = True
+       , commands = [ Run Cpu [ "-L", "10"
+                              , "-H", "50"
+                              , "--low",    "green"
+                              , "--normal", "yellow"
+                              , "--high",   "red"
+                              ] 10
+                    , Run Memory [ "-t", "Mem: <usedratio>%"
+                                 , "-L", "30"
+                                 , "-H", "60"
+                                 , "--low",    "green"
+                                 , "--normal", "yellow"
+                                 , "--high",   "red"
+                                 ] 10
+                    , Run Network "eth0" [ "-S", "True"
+                                         , "-t", "Net: <rx> / <tx>"
+                                         ] 10
+                    , Run DiskIO [("sda1", "Disk: <read> / <write>")] [] 10
+                    , Run CoreTemp [ "-L", "40"
+                                   , "-H", "60"
+                                   , "--low",    "green"
+                                   , "--normal", "yellow"
+                                   , "--high",   "red"
+                                   ] 10
                     , Run Date "%a %b %_d %I:%M:%S" "date" 10
-                    , Run Battery ["-L","49","-H","75","--high","green","--normal","yellow","--low","red"] 20
                     , Run StdinReader
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "%StdinReader% } { %cpu% | %memory% | %battery% | <fc=#ee9a00>%date%</fc>"
+       , template = "%StdinReader% } { %cpu% | %memory% | %eth0% | %diskio% | <fc=#ee9a00>%date%</fc>"
        }

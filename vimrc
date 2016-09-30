@@ -56,4 +56,4 @@ if has('autocmd')
 endif
 
 set tags=tags;/
-source /home/naveenks/Documents/myconfigs/vim/cscope_maps.vim
+source ~/.vim/cscope_maps.vim
