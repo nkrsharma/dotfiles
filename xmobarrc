@@ -16,12 +16,41 @@ Config { font = "*-terminus-bold-r-normal-*-12-*-*-*-*-*-iso8859-*"
                                  , "--normal", "yellow"
                                  , "--high",   "red"
                                  ] 10
-                    , Run Network "eth0" [ "-S", "True"
-                                         , "-t", "Net: <rx> / <tx>"
-                                         ] 10
-                    , Run DiskIO [("sda1", "Disk: <read> / <write>")] [] 10
+                    , Run DynNetwork [ "-t", "<dev>: <rx> <tx>"
+                                     , "-L", "1000"
+                                     , "-H", "100000"
+                                     , "--low",    "green"
+                                     , "--normal", "yellow"
+                                     , "--high",   "red"
+                                     , "-S", "True"
+                                     , "-m", "7"
+                                     , "-M", "7"
+                                     ] 10
+                    , Run DiskIO [ ("sda1", "Disk: <read> <write>")]
+                                 [ "-L", "10"
+                                 , "-H", "20"
+                                 , "--low",    "green"
+                                 , "--normal", "yellow"
+                                 , "--high",   "red"
+                                 , "-S", "True"
+                                 , "-m", "4"
+                                 , "-M", "4"
+                                 ] 10
                     , Run CoreTemp [ "-L", "40"
                                    , "-H", "60"
+                                   , "--low",    "green"
+                                   , "--normal", "yellow"
+                                   , "--high",   "red"
+                                   ] 10
+                    , Run Battery [ "-t", "Batt: <left>% - <acstatus> - <timeleft>"
+                                  , "-L", "30"
+                                  , "-H", "60"
+                                  , "--low",    "red"
+                                  , "--normal", "yellow"
+                                  , "--high",   "green"
+                                  ] 50
+                    , Run CoreTemp [ "-L", "50"
+                                   , "-H", "70"
                                    , "--low",    "green"
                                    , "--normal", "yellow"
                                    , "--high",   "red"
@@ -31,5 +60,5 @@ Config { font = "*-terminus-bold-r-normal-*-12-*-*-*-*-*-iso8859-*"
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "%StdinReader% } { %cpu% | %memory% | %eth0% | %diskio% | <fc=#ee9a00>%date%</fc>"
+       , template = "%StdinReader% } { %cpu% | %coretemp% | %memory% | %dynnetwork% | %diskio% | %battery% | <fc=#ee9a00>%date%</fc>"
        }
