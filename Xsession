@@ -1,0 +1,5 @@
+xrdb -merge .Xresources
+
+feh --bg-center ~/myconfigs/wallpaper.jpg
+
+exec /usr/bin/xmonad
