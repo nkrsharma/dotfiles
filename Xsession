@@ -1,5 +1,7 @@
+xrandr --output DVI-0 --primary --mode 1920x1200 --rotate normal --left-of DisplayPort-0 --mode 1920x1200 --rotate normal
+
 xrdb -merge .Xresources
 
-feh --bg-center ~/myconfigs/wallpaper.jpg
+feh --bg-center ~/dotfiles/wallpaper.jpg
 
 exec /usr/bin/xmonad
