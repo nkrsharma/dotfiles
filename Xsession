@@ -1,4 +1,8 @@
-xrandr --output DVI-0 --primary --mode 1920x1200 --rotate normal --left-of DisplayPort-0 --mode 1920x1200 --rotate normal
+#!/bin/bash
+
+if [ $HOST == "jigglypuff" ]; then
+  xrandr --output DVI-0 --primary --mode 1920x1200 --rotate normal --left-of DisplayPort-0 --mode 1920x1200 --rotate normal
+fi
 
 xrdb -merge .Xresources
 

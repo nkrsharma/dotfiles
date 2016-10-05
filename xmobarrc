@@ -55,7 +55,7 @@ Config { font = "*-terminus-bold-r-normal-*-12-*-*-*-*-*-iso8859-*"
                                    , "--normal", "yellow"
                                    , "--high",   "red"
                                    ] 10
-                    , Run Date "%a %b %_d %I:%M:%S" "date" 10
+                    , Run Date "%a %b %_d %H:%M:%S %Z" "date" 10
                     , Run StdinReader
                     ]
        , sepChar = "%"
