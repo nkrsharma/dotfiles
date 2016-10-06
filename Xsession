@@ -1,6 +1,6 @@
-#!/bin/bash
+HOSTNAME=`hostname`
 
-if [ $HOST == "jigglypuff" ]; then
+if [ "$HOSTNAME" = "jigglypuff" ]; then
   xrandr --output DVI-0 --primary --mode 1920x1200 --rotate normal --left-of DisplayPort-0 --mode 1920x1200 --rotate normal
 fi
 
