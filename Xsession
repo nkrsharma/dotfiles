@@ -8,4 +8,8 @@ xrdb -merge .Xresources
 
 feh --bg-center ~/dotfiles/wallpaper.jpg
 
+urxvtd -q -f -o
+
 exec /usr/bin/xmonad
+
+killall urxvtd
