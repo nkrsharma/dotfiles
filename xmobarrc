@@ -1,11 +1,9 @@
 Config {
     -- Appearance
-      font = "*-terminus-medium-r-normal-*-12-*-*-*-*-*-iso8859-*"
+      font = "xft:terminus-9"
     , bgColor = "black"
     , fgColor = "#93a1a1"
-    , position = TopSize L 100 15
-    , border = BottomB
-    , borderColor = "black"
+    , position = TopSize L 100 13
     , allDesktops = False
     , overrideRedirect = False
     , pickBroadest = False
@@ -64,8 +62,8 @@ Config {
                           ] 10
 
         , Run DiskIO      [ ("sda1", "Disk: <read> <write>")]
-                          [ "-L", "1024"
-                          , "-H", "100"
+                          [ "-L", "10240"
+                          , "-H", "102400"
                           , "--low",    "forestgreen"
                           , "--normal", "darkorange"
                           , "--high",   "red"
