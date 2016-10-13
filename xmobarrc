@@ -1,6 +1,6 @@
 Config {
     -- Appearance
-      font = "xft:terminus-9"
+      font = "-*-terminus-medium-r-normal-*-12-*-*-*-*-*-iso8859-*"
     , bgColor = "black"
     , fgColor = "#93a1a1"
     , position = TopSize L 100 13
@@ -16,7 +16,6 @@ Config {
     , alignSep = "}{"
     , template = " <fc=#ff8c00>%uname%</fc> - %StdinReader% } { %cpu% %coretemp% | %memory% | %dynnetwork% | %diskio% | %battery% | <fc=#ff8c00>%date%</fc>"
 
-    -- Commands
     , commands =
         [ Run StdinReader
 
