@@ -1,64 +1,83 @@
-Config { font = "*-terminus-bold-r-normal-*-12-*-*-*-*-*-iso8859-*"
-       , bgColor = "black"
-       , fgColor = "#f3f3f3"
-       , position = Top
-       , persistent = True
-       , commands = [ Run Cpu [ "-L", "10"
-                              , "-H", "50"
-                              , "--low",    "green"
-                              , "--normal", "yellow"
-                              , "--high",   "red"
-                              ] 10
-                    , Run Memory [ "-t", "Mem: <usedratio>%"
-                                 , "-L", "30"
-                                 , "-H", "60"
-                                 , "--low",    "green"
-                                 , "--normal", "yellow"
-                                 , "--high",   "red"
-                                 ] 10
-                    , Run DynNetwork [ "-t", "<dev>: <rx> <tx>"
-                                     , "-L", "1000"
-                                     , "-H", "100000"
-                                     , "--low",    "green"
-                                     , "--normal", "yellow"
-                                     , "--high",   "red"
-                                     , "-S", "True"
-                                     , "-m", "7"
-                                     , "-M", "7"
-                                     ] 10
-                    , Run DiskIO [ ("sda1", "Disk: <read> <write>")]
-                                 [ "-L", "10"
-                                 , "-H", "20"
-                                 , "--low",    "green"
-                                 , "--normal", "yellow"
-                                 , "--high",   "red"
-                                 , "-S", "True"
-                                 , "-m", "4"
-                                 , "-M", "4"
-                                 ] 10
-                    , Run CoreTemp [ "-L", "40"
-                                   , "-H", "60"
-                                   , "--low",    "green"
-                                   , "--normal", "yellow"
-                                   , "--high",   "red"
-                                   ] 10
-                    , Run Battery [ "-t", "Batt: <left>% - <acstatus> - <timeleft>"
-                                  , "-L", "30"
-                                  , "-H", "60"
-                                  , "--low",    "red"
-                                  , "--normal", "yellow"
-                                  , "--high",   "green"
-                                  ] 50
-                    , Run CoreTemp [ "-L", "50"
-                                   , "-H", "70"
-                                   , "--low",    "green"
-                                   , "--normal", "yellow"
-                                   , "--high",   "red"
-                                   ] 10
-                    , Run Date "%a %b %_d %H:%M:%S %Z" "date" 10
-                    , Run StdinReader
-                    ]
-       , sepChar = "%"
-       , alignSep = "}{"
-       , template = "%StdinReader% } { %cpu% | %coretemp% | %memory% | %dynnetwork% | %diskio% | %battery% | <fc=#ee9a00>%date%</fc>"
-       }
+Config {
+    -- Appearance
+      font = "*-terminus-medium-r-normal-*-12-*-*-*-*-*-iso8859-*"
+    , bgColor = "black"
+    , fgColor = "#93a1a1"
+    , position = TopSize L 100 15
+    , border = BottomB
+    , borderColor = "black"
+    , allDesktops = False
+    , overrideRedirect = False
+    , pickBroadest = False
+    , hideOnStart = False
+    , lowerOnStart = True
+    , persistent = True
+
+    -- Layout
+    , sepChar = "%"
+    , alignSep = "}{"
+    , template = " <fc=#ff8c00>%uname%</fc> - %StdinReader% } { %cpu% %coretemp% | %memory% | %dynnetwork% | %diskio% | %battery% | <fc=#ff8c00>%date%</fc>"
+
+    -- Commands
+    , commands =
+        [ Run StdinReader
+
+        , Run Com "uname" [ "-n" ] "" 0
+
+        , Run Date "%a %b %_d %H:%M:%S %Z" "date" 10
+
+        , Run Cpu         [ "-t", "Cpu:<system>% <user>% <total>%"
+                          , "-L", "15"
+                          , "-H", "60"
+                          , "--low",    "forestgreen"
+                          , "--normal", "darkorange"
+                          , "--high",   "red"
+                          , "--width", "3"
+                          ] 20
+
+        , Run CoreTemp    [ "-t", "<core0>C"
+                          , "-L", "40"
+                          , "-H", "60"
+                          , "--low",    "forestgreen"
+                          , "--normal", "darkorange"
+                          , "--high",   "red"
+                          , "--width", "3"
+                          ] 50
+
+        , Run Memory      [ "-t", "Mem: <usedratio>%"
+                          , "-L", "35"
+                          , "-H", "70"
+                          , "--low",    "forestgreen"
+                          , "--normal", "darkorange"
+                          , "--high",   "red"
+                          , "--width", "3"
+                          ] 50
+
+        , Run DynNetwork  [ "-t", "<dev>: <rx> <tx>"
+                          , "-L", "1024"
+                          , "-H", "1048576"
+                          , "-S", "True"
+                          , "--low",    "forestgreen"
+                          , "--normal", "darkorange"
+                          , "--high",   "red"
+                          , "--width", "7"
+                          ] 10
+
+        , Run DiskIO      [ ("sda1", "Disk: <read> <write>")]
+                          [ "-L", "1024"
+                          , "-H", "100"
+                          , "--low",    "forestgreen"
+                          , "--normal", "darkorange"
+                          , "--high",   "red"
+                          , "--width", "4"
+                          ] 10
+
+        , Run Battery     [ "-t", "Batt: <acstatus> <left>% - <timeleft>"
+                          , "-L", "30"
+                          , "-H", "60"
+                          , "--low",    "red"
+                          , "--normal", "darkorange"
+                          , "--high",   "forestgreen"
+                          ] 100
+        ]
+    }
