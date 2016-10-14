@@ -1,11 +1,13 @@
 Config {
     -- Appearance
       font = "-*-terminus-medium-r-normal-*-12-*-*-*-*-*-iso8859-*"
-    , bgColor = "black"
+    , bgColor = "#002b36"
     , fgColor = "#93a1a1"
-    , position = TopSize L 100 13
+    , position = TopSize L 100 14
+    , border = BottomB
+    , borderColor = "#002b36"
     , allDesktops = False
-    , overrideRedirect = False
+    , overrideRedirect = True
     , pickBroadest = False
     , hideOnStart = False
     , lowerOnStart = True
@@ -14,7 +16,7 @@ Config {
     -- Layout
     , sepChar = "%"
     , alignSep = "}{"
-    , template = " <fc=#ff8c00>%uname%</fc> - %StdinReader% } { %cpu% %coretemp% | %memory% | %dynnetwork% | %diskio% | %battery% | <fc=#ff8c00>%date%</fc>"
+    , template = " <fc=#cb4b16>%uname%</fc> - %StdinReader% } { %cpu% %coretemp% | %memory% | %dynnetwork% | %diskio% | %battery% | <fc=#cb4b16>%date%</fc>"
 
     , commands =
         [ Run StdinReader
@@ -26,27 +28,27 @@ Config {
         , Run Cpu         [ "-t", "Cpu:<system>% <user>% <total>%"
                           , "-L", "15"
                           , "-H", "60"
-                          , "--low",    "forestgreen"
-                          , "--normal", "darkorange"
-                          , "--high",   "red"
+                          , "--low",    "#859900"
+                          , "--normal", "#b58900"
+                          , "--high",   "#dc322f"
                           , "--width", "3"
                           ] 20
 
         , Run CoreTemp    [ "-t", "<core0>C"
-                          , "-L", "40"
-                          , "-H", "60"
-                          , "--low",    "forestgreen"
-                          , "--normal", "darkorange"
-                          , "--high",   "red"
+                          , "-L", "45"
+                          , "-H", "65"
+                          , "--low",    "#859900"
+                          , "--normal", "#b58900"
+                          , "--high",   "#dc322f"
                           , "--width", "3"
                           ] 50
 
         , Run Memory      [ "-t", "Mem: <usedratio>%"
                           , "-L", "35"
                           , "-H", "70"
-                          , "--low",    "forestgreen"
-                          , "--normal", "darkorange"
-                          , "--high",   "red"
+                          , "--low",    "#859900"
+                          , "--normal", "#b58900"
+                          , "--high",   "#dc322f"
                           , "--width", "3"
                           ] 50
 
@@ -54,27 +56,27 @@ Config {
                           , "-L", "1024"
                           , "-H", "1048576"
                           , "-S", "True"
-                          , "--low",    "forestgreen"
-                          , "--normal", "darkorange"
-                          , "--high",   "red"
+                          , "--low",    "#859900"
+                          , "--normal", "#b58900"
+                          , "--high",   "#dc322f"
                           , "--width", "7"
                           ] 10
 
         , Run DiskIO      [ ("sda1", "Disk: <read> <write>")]
                           [ "-L", "10240"
                           , "-H", "102400"
-                          , "--low",    "forestgreen"
-                          , "--normal", "darkorange"
-                          , "--high",   "red"
+                          , "--low",    "#859900"
+                          , "--normal", "#b58900"
+                          , "--high",   "#dc322f"
                           , "--width", "4"
                           ] 10
 
         , Run Battery     [ "-t", "Batt: <acstatus> <left>% - <timeleft>"
                           , "-L", "30"
                           , "-H", "60"
-                          , "--low",    "red"
-                          , "--normal", "darkorange"
-                          , "--high",   "forestgreen"
+                          , "--low",    "#dc322f"
+                          , "--normal", "#b58900"
+                          , "--high",   "#859900"
                           ] 100
         ]
     }

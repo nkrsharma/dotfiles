@@ -1,3 +1,4 @@
+! Solarized (dark) theme.
 #define S_base0    #839496
 #define S_base1    #93a1a1
 #define S_base2    #eee8d5
@@ -35,18 +36,22 @@ URxvt*color13:     S_violet
 URxvt*color14:     S_base1
 URxvt*color15:     S_base3
 
-URxvt*font: terminus-12
-URxvt*boldFont: terminus-12
-URxvt*italicFont: terminus-12
-URxvt*boldItalicFont: terminus-12
+URxvt*font: -*-terminus-medium-r-normal-*-12-*-*-*-*-*-iso8859-*
+URxvt*boldFont: -*-terminus-medium-r-normal-*-12-*-*-*-*-*-iso8859-*
+URxvt*italicFont: -*-terminus-medium-r-normal-*-12-*-*-*-*-*-iso8859-*
+URxvt*boldItalicFont: -*-terminus-medium-r-normal-*-12-*-*-*-*-*-iso8859-*
+URxvt*intensityStyles: False
+
 URxvt*saveLines: 65535
+URxvt*print-pipe: "cat > /tmp/urxvt-`date +'%Y-%m-%d-%H:%M:%S'`"
+URxvt*urgentOnBell: true
+URxvt*cutchars: `"'&()*,;<=>?@[]^{|}
+
+URxvt*jumpScroll: true
 URxvt*scrollBar: false
-URxvt*secondaryScroll: true
-URxvt*cutchars: "()*,<>[]{}|''"
-URxvt*eightBitInput: false
-URxvt*locale: true
-URxvt*metaSendsEscape: true
-URxvt*backarrowKeyIsErase: true
+URxvt*scrollTtyOutput: false
+URxvt*scrollWithBuffer: true
+URxvt*scrollTtyKeypress: true
+
 URxvt*iso14755: False
 URxvt*iso14755_52: False
-URxvt*intensityStyles: False
