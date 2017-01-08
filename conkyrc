@@ -5,7 +5,7 @@ out_to_x no
 override_utf8_locale yes
 pad_percents 2
 total_run_times 0
-update_interval 1
+update_interval 2
 update_interval_on_battery 10
 use_spacer left
 
@@ -13,13 +13,13 @@ TEXT
 | ^fg(\#01a252)cpu^fg() ${cpu}%  ${freq_g 1}GHz ${acpitemp}C | \
 ^fg(\#01a252)mem^fg()  ${memperc}% | \
 ${if_up wlan0}\
-^fg(\#01a252)net^fg() ${upspeed wlan0} ${downspeed wlan0} | \
+^fg(\#01a252)net^fg() ${downspeed wlan0} ${upspeed wlan0} | \
 ^fg(\#01a252)wifi^fg() ${wireless_essid wlan0}${wireless_link_qual_perc wlan0}% | \
 ${endif}\
 ${if_up eth0}\
-^fg(\#01a252)net^fg() ${upspeed eth0} ${downspeed eth0} | \
+^fg(\#01a252)net^fg() ${downspeed eth0} ${upspeed eth0} | \
 ${endif}\
-^fg(\#01a252)disk^fg() ${diskio /dev/sda} | \
+^fg(\#01a252)disk^fg() ${diskio /dev/sda} ${fs_used_perc}% | \
 ${if_existing /sys/class/power_supply/BAT0/present}\
 ^fg(\#01a252)bat^fg() ${battery_percent}% ${battery_time} | \
 ${endif}\

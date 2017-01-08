@@ -94,7 +94,7 @@ alias more='less'
 alias h='history'
 
 # Check my processes.
-alias psme='ps aux | \grep "^$USERNAME"'
+alias psme='ps ux'
 alias psmet='pstree $USER'
 
 # File associations.
