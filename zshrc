@@ -39,6 +39,7 @@ setopt CORRECT                    # Try to correct spelling on commands
 setopt EXTENDED_HISTORY           # Keep timestamps on history entries
 setopt HIST_IGNORE_ALL_DUPS       # Remove repeated commands from history
 setopt HIST_IGNORE_SPACE          # Ignore blank commands
+setopt HIST_NO_FUNCTIONS          # Don't store function definitions.
 setopt HIST_REDUCE_BLANKS         # Reformat whitespace in history
 setopt INC_APPEND_HISTORY         # .. do so as commands are entered
 
@@ -98,12 +99,17 @@ alias psme='ps ux'
 alias psmet='pstree $USER'
 
 # File associations.
-alias -s pdf=zathura
-alias -s ps=zathura
-alias -s eps=zathura
+for t in eps ps pdf; do
+  alias -s $t='run_in_background zathura'
+done
 
-alias -s avi=vlc
-alias -s flv=vlc
-alias -s mp3=vlc
-alias -s mp4=vlc
-alias -s mpeg=vlc
+for t in avi flv mkv mp3 mp4 mpeg; do
+  alias -s $t='run_in_background vlc'
+done
+
+# Utility functions.
+run_in_background()
+{
+    echo "$@"
+    "$@" > /tmp/log-$1 2>&1 &
+}
