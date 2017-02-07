@@ -111,5 +111,11 @@ done
 run_in_background()
 {
     echo "$@"
-    "$@" > /tmp/log-$1 2>&1 &
+    "$@" >> /tmp/log-$1 2>&1 &
 }
+
+# Weather of some cities.
+alias wea_kgp='curl "http://wttr.in/Kharagpur,India?m"'
+alias wea_lax='curl "http://wttr.in/Los Angeles,US?m"'
+alias wea_sea='curl "http://wttr.in/Seattle,US?m"'
+alias wea_sfo='curl "http://wttr.in/San Francisco,US?m"'

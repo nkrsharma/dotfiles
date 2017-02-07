@@ -42,8 +42,10 @@ myLogHook output host = dynamicLogWithPP $ defaultPP
 myKeys XConfig { modMask = modM } = M.fromList $
   [
   -- Application shortcuts
-    ((modM, xK_F1), safeSpawn "google-chrome" [])
-  , ((modM, xK_F2), safeSpawn "firefox" [])
+    ((modM,               xK_F1), safeSpawn "google-chrome" [])
+  , ((modM .|. shiftMask, xK_F1), safeSpawn "google-chrome" ["--incognito"])
+  , ((modM,               xK_F2), safeSpawn "firefox" [])
+  , ((modM,               xK_F3), safeSpawn "vlc" [])
 
   -- Lock screen.
   , ((modM .|. shiftMask, xK_l), safeSpawn "slock" [])
