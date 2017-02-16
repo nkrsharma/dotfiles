@@ -1,5 +1,6 @@
 import System.IO
 import System.Posix.Unistd
+import Graphics.X11.ExtraTypes.XF86
 
 import XMonad
 import XMonad.Config.Desktop
@@ -41,8 +42,11 @@ myLogHook output host = dynamicLogWithPP $ defaultPP
 
 myKeys XConfig { modMask = modM } = M.fromList $
   [
+  -- Toggle struts (xmobar/dzen2)
+    ((modM, xK_f), sendMessage ToggleStruts)
+
   -- Application shortcuts
-    ((modM,               xK_F1), safeSpawn "google-chrome" [])
+  , ((modM,               xK_F1), safeSpawn "google-chrome" [])
   , ((modM .|. shiftMask, xK_F1), safeSpawn "google-chrome" ["--incognito"])
   , ((modM,               xK_F2), safeSpawn "firefox" [])
   , ((modM,               xK_F3), safeSpawn "vlc" [])
@@ -50,11 +54,12 @@ myKeys XConfig { modMask = modM } = M.fromList $
   -- Lock screen.
   , ((modM .|. shiftMask, xK_l), safeSpawn "slock" [])
 
-  -- Toggle struts (xmobar)
-  , ((modM, xK_f), sendMessage ToggleStruts)
-
   -- Screen capture
-  , ((modM, xK_Print), safeSpawn "scrot" [])
+  , ((0,    xK_Print), safeSpawn "scrot" [])
+  , ((modM, xK_Print), safeSpawn "scrot" ["--select"])
 
-  -- Audio control
+  -- Audio control (assuming pulseaudio)
+  , ((0, xF86XK_AudioRaiseVolume), safeSpawn "pactl" ["set-sink-volume", "0", "+5%"])
+  , ((0, xF86XK_AudioLowerVolume), safeSpawn "pactl" ["set-sink-volume", "0", "-5%"])
+  , ((0, xF86XK_AudioMute       ), safeSpawn "pactl" ["set-sink-mute", "0", "toggle"])
   ]
