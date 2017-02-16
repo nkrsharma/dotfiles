@@ -59,7 +59,7 @@ URxvt*urgentOnBell: true
 URxvt*cutchars: `'"'&()*,;<=>?@[]^{|}"'"
 URxvt*print-pipe: "cat > /tmp/urxvt-`date +'%Y-%m-%d-%H:%M:%S'`"
 
-! Don't need extra unicode characters
+! Disable extra unicode characters
 URxvt*iso14755: false
 URxvt*iso14755_52: false
 
