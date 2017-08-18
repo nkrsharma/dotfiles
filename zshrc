@@ -61,7 +61,7 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 
 # Handy list directory aliases.
-alias ls='ls -hF --color=auto --group-directories-first'
+alias ls='ls -hFv --color=auto --group-directories-first'
 alias ll='ls -l'                  # Long list
 alias la='ls -lA'                 # All files.
 alias lz='ls -lSr'                # Sort by size.
