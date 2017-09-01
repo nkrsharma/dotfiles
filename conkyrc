@@ -24,7 +24,7 @@ ${if_up eth0}\
 ${endif}\
 ^fg(\#01a252)disk^fg() ${diskio /dev/sda} ${fs_used_perc}% | \
 ${if_existing /sys/class/power_supply/BAT0/present}\
-^fg(\#01a252)bat^fg() ${battery_percent}% ${battery_time} | \
+^fg(\#01a252)bat^fg() ${battery_short} | \
 ${endif}\
 ^fg(\#01a252)vol^fg() ${pa_sink_volume}% | \
 ^fg(\#db2d20)${time %a %b %d %H:%M:%S %Z}^fg()

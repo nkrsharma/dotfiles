@@ -17,17 +17,18 @@ main = do
   dzenLeftBar  <- spawnPipe myXmonadBar
   dzenRightBar <- spawnPipe myStatusBar
   xmonad $ withUrgencyHook NoUrgencyHook defaultConfig
-    { terminal   = myTerminal
-    , modMask    = mod4Mask
-    , keys       = \c -> myKeys c `M.union` keys defaultConfig c
-    , manageHook = manageDocks <+> manageHook defaultConfig
-    , layoutHook = avoidStruts $ smartBorders $ layoutHook defaultConfig
-    , logHook    = myLogHook dzenLeftBar host
+    { terminal        = myTerminal
+    , modMask         = mod4Mask
+    , keys            = \c -> myKeys c `M.union` keys defaultConfig c
+    , handleEventHook = docksEventHook
+    , manageHook      = manageDocks <+> manageHook defaultConfig
+    , layoutHook      = avoidStruts $ smartBorders $ layoutHook defaultConfig
+    , logHook         = myLogHook dzenLeftBar host
     }
 
 myDzenStyle = "-bg '#090300' -fn '-*-terminus-medium-r-normal-*-12-*-*-*-*-*-iso8859-*' -xs 1 -e 'onstart=lower'"
-myXmonadBar = "dzen2 -ta l -w 700 -x 0 -y 0 " ++ myDzenStyle
-myStatusBar = "killall conky; conky -c ~/.conkyrc | dzen2 -ta r -x 700 -y 0 " ++ myDzenStyle
+myXmonadBar = "dzen2 -dock -ta l -w 700 -x 0 -y 0 " ++ myDzenStyle
+myStatusBar = "killall conky; conky -c ~/.conkyrc | dzen2 -dock -ta r -x 700 -y 0 " ++ myDzenStyle
 
 myTerminal = "urxvtc"
 
