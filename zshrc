@@ -107,6 +107,10 @@ for t in avi flv mkv mp3 mp4 mpeg; do
   alias -s $t='run_in_background vlc'
 done
 
+for t in c h cc cpp py; do
+  alias -s $t=vim
+done
+
 # Utility functions.
 run_in_background()
 {

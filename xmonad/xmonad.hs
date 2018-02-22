@@ -44,16 +44,17 @@ myLogHook output host = dynamicLogWithPP $ defaultPP
 myKeys XConfig { modMask = modM } = M.fromList $
   [
   -- Toggle struts (xmobar/dzen2)
-    ((modM, xK_f), sendMessage ToggleStruts)
+    ((modM,               xK_f ), sendMessage ToggleStruts)
 
   -- Application shortcuts
   , ((modM,               xK_F1), safeSpawn "google-chrome" [])
   , ((modM .|. shiftMask, xK_F1), safeSpawn "google-chrome" ["--incognito"])
   , ((modM,               xK_F2), safeSpawn "firefox" [])
   , ((modM,               xK_F3), safeSpawn "vlc" [])
+  , ((modM .|. shiftMask, xK_f ), safeSpawn "thunar" [])
 
   -- Lock screen.
-  , ((modM .|. shiftMask, xK_l), safeSpawn "slock" [])
+  , ((modM .|. shiftMask, xK_l ), safeSpawn "slock" [])
 
   -- Screen capture
   , ((0,    xK_Print), safeSpawn "scrot" [])

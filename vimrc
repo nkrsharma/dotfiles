@@ -21,6 +21,7 @@ set smarttab
 set backspace=indent,eol,start
 
 " Interface options
+set cursorline
 set number
 set ruler
 set showcmd
