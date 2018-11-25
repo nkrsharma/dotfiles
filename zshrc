@@ -107,8 +107,12 @@ for t in avi flv mkv mp3 mp4 mpeg; do
   alias -s $t='run_in_background vlc'
 done
 
-for t in c h cc cpp py; do
+for t in c h cc cpp; do
   alias -s $t=vim
+done
+
+for t in jpg jpeg png; do
+  alias -s $t='feh -Z --scale-down'
 done
 
 # Utility functions.

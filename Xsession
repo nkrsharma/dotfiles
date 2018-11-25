@@ -6,7 +6,7 @@ fi
 
 xrdb -merge .Xresources
 
-feh --bg-center ~/dotfiles/wallpaper.jpg
+feh --bg-fill ~/dotfiles/wallpaper.jpg
 
 urxvtd -q -f -o
 

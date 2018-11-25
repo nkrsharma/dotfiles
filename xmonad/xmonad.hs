@@ -64,4 +64,8 @@ myKeys XConfig { modMask = modM } = M.fromList $
   , ((0, xF86XK_AudioRaiseVolume), safeSpawn "pactl" ["set-sink-volume", "0", "+5%"])
   , ((0, xF86XK_AudioLowerVolume), safeSpawn "pactl" ["set-sink-volume", "0", "-5%"])
   , ((0, xF86XK_AudioMute       ), safeSpawn "pactl" ["set-sink-mute", "0", "toggle"])
+
+  -- Brightness control (using brightnessctl/xbacklight)
+  , ((0, xF86XK_MonBrightnessDown), safeSpawn "brightnessctl" ["set", "5%-"])
+  , ((0, xF86XK_MonBrightnessUp),   safeSpawn "brightnessctl" ["set", "+5%"])
   ]
