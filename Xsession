@@ -9,7 +9,9 @@ xrdb -merge .Xresources
 feh --bg-fill ~/dotfiles/wallpaper.jpg
 
 urxvtd -q -f -o
+export TERMINAL=urxvtc
 
-exec /usr/bin/xmonad
+#exec /usr/bin/xmonad
+exec i3
 
 killall urxvtd

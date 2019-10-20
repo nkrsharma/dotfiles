@@ -72,9 +72,9 @@ alias lm='ls -lA | less'          # Show very long list of files.
 alias lr='ls -lR'                 # Show folders recursively
 
 # Confirm when overwriting.
-alias rm='rm -i'
-alias cp='cp -i'
-alias mv='mv -i'
+alias rm='rm -iv'
+alias cp='cp -iv'
+alias mv='mv -iv'
 alias mkdir='mkdir -p'
 
 # Colorized grep.
@@ -93,6 +93,7 @@ export LESS_TERMCAP_us=$'\e[1;32m'
 
 alias more='less'
 alias h='history'
+alias feh='feh -Z --scale-down'
 
 # Check my processes.
 alias psme='ps ux'
