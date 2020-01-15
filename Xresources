@@ -65,3 +65,10 @@ URxvt*iso14755_52: false
 
 ! Ctrl-Backspace does not send Ctrl-h
 URxvt*keysym*C-BackSpace: \033[33~
+
+! Font resizing plugin
+URxvt.perl-ext-common: resize-font
+URxvt.keysym.C-S-Down: resize-font:smaller
+URxvt.keysym.C-S-Up: resize-font:bigger
+URxvt.keysym.C-S-Left: resize-font:reset
+URxvt.keysym.C-S-Right: resize-font:show
