@@ -100,7 +100,7 @@ alias psme='ps ux'
 alias psmet='pstree $USER'
 
 # File associations.
-for t in eps ps pdf; do
+for t in eps ps pdf EPS PS PDF; do
   alias -s $t='run_in_background zathura'
 done
 
@@ -112,7 +112,7 @@ for t in c h cc cpp; do
   alias -s $t=vim
 done
 
-for t in jpg jpeg png; do
+for t in jpg jpeg png JPG JPEG PNG; do
   alias -s $t='feh -Z --scale-down'
 done
 
