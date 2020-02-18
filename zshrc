@@ -93,7 +93,7 @@ export LESS_TERMCAP_us=$'\e[1;32m'
 
 alias more='less'
 alias h='history'
-alias feh='feh -Z --scale-down'
+alias feh='feh -Z --scale-down *.(jpg|jpeg|png|JPG|JPEG|PNG)'
 
 # Check my processes.
 alias psme='ps ux'
@@ -104,7 +104,7 @@ for t in eps ps pdf EPS PS PDF; do
   alias -s $t='run_in_background zathura'
 done
 
-for t in avi flv mkv mp3 mp4 mpeg; do
+for t in avi flv mkv mp3 mp4 mpeg AVI FLV MKV MP3 MP4 MPEG; do
   alias -s $t='run_in_background vlc'
 done
 
