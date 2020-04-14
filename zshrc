@@ -93,7 +93,7 @@ export LESS_TERMCAP_us=$'\e[1;32m'
 
 alias more='less'
 alias h='history'
-alias feh='feh -Z --scale-down *.(jpg|jpeg|png|JPG|JPEG|PNG)'
+alias feh='\feh -Z --scale-down *.(jpg|jpeg|png|JPG|JPEG|PNG)'
 
 # Check my processes.
 alias psme='ps ux'
@@ -113,7 +113,7 @@ for t in c h cc cpp; do
 done
 
 for t in jpg jpeg png JPG JPEG PNG; do
-  alias -s $t='feh -Z --scale-down'
+  alias -s $t='\feh -Z --scale-down'
 done
 
 # Utility functions.

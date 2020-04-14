@@ -28,7 +28,8 @@ set showcmd
 set showmode
 set showmatch
 set scrolloff=7
-set textwidth=72
+set textwidth=80
+set colorcolumn=+1
 
 " File related options
 set autoread
@@ -56,13 +57,3 @@ set listchars=eol:$,tab:->,trail:~,extends:>,precedes:<
 map <F9>  :set list!<CR>
 set pastetoggle=<F10>
 map <F12> :set spell! spelllang=en_us<CR>
-
-filetype on
-filetype indent on
-filetype plugin on
-filetype plugin indent on
-
-if has('autocmd')
-  au FileType c,cpp set ts=4 sw=4 textwidth=80
-  au BufRead,BufNewFile *.xpc set filetype=c
-endif
