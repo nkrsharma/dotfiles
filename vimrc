@@ -1,6 +1,8 @@
 " Enable other vim features
 set nocompatible
 
+set noeb vb t_vb=
+
 " Use utf8 display
 set encoding=utf-8
 

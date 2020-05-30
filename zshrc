@@ -8,8 +8,10 @@ if [ -t 0 ]; then
 fi
 
 # Set default editor to vim.
-export VISUAL=vim
+export VISUAL="vim"
 export EDITOR=$VISUAL
+export SUDO_EDITOR=$VISUAL
+export BROWSER="chromium"
 
 # Default to emacs key-bindings.
 bindkey -e
@@ -19,7 +21,7 @@ autoload -Uz colors && colors
 autoload -Uz compinit && compinit
 
 # Simple prompt.
-PROMPT='%F{red}%n@%m%f%F{green}:%1~%f$ '
+PROMPT='%F{yellow}%n@%m%f:%F{blue}%1~%f$ '
 
 # Allow some more words.
 WORDCHARS=${WORDCHARS//[-\/.;&]}
@@ -91,6 +93,8 @@ export LESS_TERMCAP_so=$'\e[1;33m'
 export LESS_TERMCAP_ue=$'\e[0m'
 export LESS_TERMCAP_us=$'\e[1;32m'
 
+alias vi='vim'
+alias diff='diff -u --color=auto'
 alias more='less'
 alias h='history'
 alias feh='\feh -Z --scale-down *.(jpg|jpeg|png|JPG|JPEG|PNG)'
@@ -105,7 +109,7 @@ for t in eps ps pdf EPS PS PDF; do
 done
 
 for t in avi flv mkv mp3 mp4 mpeg AVI FLV MKV MP3 MP4 MPEG; do
-  alias -s $t='run_in_background vlc'
+  alias -s $t='run_in_background mpv'
 done
 
 for t in c h cc cpp; do
