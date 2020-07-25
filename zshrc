@@ -21,7 +21,8 @@ autoload -Uz colors && colors
 autoload -Uz compinit && compinit
 
 # Simple prompt.
-PROMPT='%F{yellow}%n@%m%f:%F{blue}%1~%f$ '
+PROMPT=$'%F{yellow}%n@%m%f:%F{blue}%~%f\n%# '
+RPROMPT='%*'
 
 # Allow some more words.
 WORDCHARS=${WORDCHARS//[-\/.;&]}
