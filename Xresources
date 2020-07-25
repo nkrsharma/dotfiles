@@ -38,10 +38,10 @@ URxvt*color14:     S_base1
 URxvt*color15:     S_base3
 
 ! Font style
-URxvt*font: -*-terminus-medium-r-normal-*-12-*-*-*-*-*-iso10646-*
-URxvt*boldFont: -*-terminus-medium-r-normal-*-12-*-*-*-*-*-iso10646-*
-URxvt*italicFont: -*-terminus-medium-r-normal-*-12-*-*-*-*-*-iso10646-*
-URxvt*boldItalicFont: -*-terminus-medium-r-normal-*-12-*-*-*-*-*-iso10646-*
+URxvt*font: xft:xos4 Terminus:pixelsize=12
+URxvt*boldFont: xft:xos4 Terminus:pixelsize=12:style=bold
+URxvt*italicFont: xft:xos4 Terminus:pixelsize=12
+URxvt*boldItalicFont: xft:xos4 Terminus:pixelsize=12:style=bold
 URxvt*intensityStyles: false
 
 ! Scrolling preferences
