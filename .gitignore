@@ -1,4 +1,9 @@
 vim/.netrwhist
+vim/bundle/YouCompleteMe/
+vim/bundle/syntastic/
+vim/bundle/vim-codefmt/
+vim/bundle/vim-glaive/
+vim/bundle/vim-maktaba/
 xmonad/xmonad-x86_64-linux
 xmonad/xmonad.errors
 xmonad/xmonad.hi
