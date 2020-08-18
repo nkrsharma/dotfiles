@@ -1,5 +1,5 @@
 # Add sbin directories to path.
-export PATH=$PATH:/usr/sbin:/usr/local/sbin:/sbin
+export PATH=$PATH:/usr/sbin:/usr/local/sbin:/sbin:~/.bin
 
 # Turn off flow control (ctrl-s,q)
 if [ -t 0 ]; then
@@ -172,14 +172,13 @@ for t in jpg jpeg png JPG JPEG PNG; do
 done
 
 # Utility functions.
-run_in_background()
-{
-    echo "$@"
-    "$@" >> /tmp/log-$1 2>&1 &
+run_in_background() {
+  echo "$@"
+  "$@" >> /tmp/log-$1 2>&1 &
 }
 
 # Weather of some cities.
 alias wea_kgp='curl "http://wttr.in/Kharagpur,India?m"'
-alias wea_lax='curl "http://wttr.in/Los Angeles,US?m"'
 alias wea_sea='curl "http://wttr.in/Seattle,US?m"'
-alias wea_sfo='curl "http://wttr.in/San Francisco,US?m"'
+alias wea_mtv='curl "http://wttr.in/Mountain View,US?m"'
+alias wea_svl='curl "http://wttr.in/Sunnyvale,US?m"'

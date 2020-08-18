@@ -1,9 +1,27 @@
 " Enable other vim features
 set nocompatible
-
 set noeb vb t_vb=
 
-" Use utf8 display
+" Configure Vundle and add plugins
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'google/vim-maktaba'
+Plugin 'google/vim-codefmt'
+Plugin 'google/vim-glaive'
+Plugin 'ycm-core/YouCompleteMe'
+Plugin 'vim-syntastic/syntastic'
+call vundle#end()
+
+call glaive#Install()
+augroup autoformat_settings
+  autocmd FileType c,cpp,proto,javascript,arduino AutoFormatBuffer clang-format
+augroup END
+
+filetype plugin indent on
+
+" Use utf-8 display
 set encoding=utf-8
 
 " Syntax and coloring
@@ -50,7 +68,7 @@ set hlsearch
 
 " Copy pasting across vim
 vmap <C-c> "+y
-nmap <C-p> "+p
+nmap <C-x> "+p
 
 " Show whitespace characters on <F9>
 set listchars=eol:$,tab:->,trail:~,extends:>,precedes:<
@@ -59,3 +77,8 @@ set listchars=eol:$,tab:->,trail:~,extends:>,precedes:<
 map <F9>  :set list!<CR>
 set pastetoggle=<F10>
 map <F12> :set spell! spelllang=en_us<CR>
+
+" Syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
