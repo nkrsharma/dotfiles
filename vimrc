@@ -21,7 +21,7 @@ augroup END
 
 filetype plugin indent on
 
-" Use utf-8 display
+" Configure encoding
 set encoding=utf-8
 
 " Syntax and coloring
@@ -41,15 +41,18 @@ set smarttab
 set backspace=indent,eol,start
 
 " Interface options
+set colorcolumn=+1
 set cursorline
 set number
 set ruler
-set showcmd
-set showmode
-set showmatch
 set scrolloff=7
+set showcmd
+set showmatch
+set showmode
+set showtabline=2
+set splitbelow
+set splitright
 set textwidth=80
-set colorcolumn=+1
 
 " File related options
 set autoread
@@ -66,9 +69,22 @@ set smartcase
 set incsearch
 set hlsearch
 
-" Copy pasting across vim
-vmap <C-c> "+y
-nmap <C-x> "+p
+" Tab shortcuts
+noremap <C-b> <Esc>:tabnew<CR>
+noremap <C-n> <Esc>:tabp<CR>
+noremap <C-m> <Esc>:tabn<CR>
+
+" Pane shortcuts
+noremap <C-_> <Esc>:new<CR>
+noremap <C-\> <Esc>:vnew<CR>
+noremap <C-h> <C-w>h
+noremap <C-j> <C-w>j
+noremap <C-k> <C-w>k
+noremap <C-l> <C-w>l
+
+" Copy paste to system clipboard
+nmap <C-c> "+y
+nmap <C-p> "+p
 
 " Show whitespace characters on <F9>
 set listchars=eol:$,tab:->,trail:~,extends:>,precedes:<

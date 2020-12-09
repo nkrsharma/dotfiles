@@ -63,9 +63,6 @@ URxvt*print-pipe: "cat > /tmp/urxvt-`date +'%Y-%m-%d-%H:%M:%S'`"
 URxvt*iso14755: false
 URxvt*iso14755_52: false
 
-! Ctrl-Backspace does not send Ctrl-h
-URxvt*keysym*C-BackSpace: \033[33~
-
 ! Font resizing plugin
 URxvt.perl-ext-common: resize-font
 URxvt.keysym.C-S-Down: resize-font:smaller
