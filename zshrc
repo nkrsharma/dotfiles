@@ -11,7 +11,7 @@ fi
 export VISUAL="vim"
 export EDITOR=$VISUAL
 export SUDO_EDITOR=$VISUAL
-export BROWSER="chromium"
+export BROWSER="/usr/bin/google-chrome-stable"
 
 # Default to emacs key-bindings.
 bindkey -e
