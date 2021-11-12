@@ -28,8 +28,8 @@ RPROMPT='%*'
 WORDCHARS=${WORDCHARS//[-\/.;&]}
 
 # History.
-HISTSIZE=1024                     # Lines to store in memory
-SAVEHIST=1024                     # Lines to save to disk
+HISTSIZE=4096                     # Lines to store in memory
+SAVEHIST=4096                     # Lines to save to disk
 HISTFILE=~/.zsh_history           # File on disk
 
 # Directory colors.
@@ -38,7 +38,7 @@ eval "$(dircolors -b)"
 # General options.
 setopt AUTO_CD                    # Perform cd if command is a directory
 setopt APPEND_HISTORY             # Append instead of replacing history
-setopt CORRECT                    # Try to correct spelling on commands
+setopt CORRECT_ALL                # Try to correct spelling on commands
 setopt EXTENDED_HISTORY           # Keep timestamps on history entries
 setopt HIST_IGNORE_ALL_DUPS       # Remove repeated commands from history
 setopt HIST_IGNORE_SPACE          # Ignore blank commands
