@@ -22,7 +22,7 @@ autoload -Uz compinit && compinit
 
 # Simple prompt.
 PROMPT=$'%F{yellow}%n%f@%F{magenta}%m%f:%F{blue}%~%f\n%# '
-RPROMPT='%*'
+RPROMPT='%W %*'
 
 # Allow some more words.
 WORDCHARS=${WORDCHARS//[-\/.;&]}
@@ -94,8 +94,8 @@ key[Shift-Tab]="${terminfo[kcbt]}"
 [[ -n "${key[PageDown]}"  ]] && bindkey -- "${key[PageDown]}"  end-of-buffer-or-history
 [[ -n "${key[Shift-Tab]}" ]] && bindkey -- "${key[Shift-Tab]}" reverse-menu-complete
 
-# Finally, make sure the terminal is in application mode, when zle is
-# active. Only then are the values from $terminfo valid.
+# Finally, make sure the terminal is in application mode, when zle is active.
+# Only then are the values from $terminfo valid.
 if (( ${+terminfo[smkx]} && ${+terminfo[rmkx]} )); then
 	autoload -Uz add-zle-hook-widget
 	function zle_application_mode_start { echoti smkx }
