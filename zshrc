@@ -138,7 +138,7 @@ export LESS_TERMCAP_ue=$'\e[0m'
 export LESS_TERMCAP_us=$'\e[1;32m'
 
 # Colorized commands.
-export GREP_COLOR='0;33'
+export GREP_COLORS='mt=0;33'
 alias grep='grep --colour=auto'
 alias egrep='egrep --colour=auto'
 alias diff='diff -u --color=auto'

@@ -43,6 +43,7 @@ set backspace=indent,eol,start
 " Interface options
 set colorcolumn=+1
 set cursorline
+set nomore
 set number
 set ruler
 set scrolloff=7
@@ -70,9 +71,9 @@ set incsearch
 set hlsearch
 
 " Tab shortcuts
-noremap <C-b> <Esc>:tabnew<CR>
-noremap <C-n> <Esc>:tabp<CR>
-noremap <C-m> <Esc>:tabn<CR>
+noremap <C-m> <Esc>:tabnew<CR>
+noremap <C-b> <Esc>:tabp<CR>
+noremap <C-n> <Esc>:tabn<CR>
 
 " Pane shortcuts
 noremap <C-_> <Esc>:new<CR>
