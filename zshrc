@@ -33,7 +33,7 @@ SAVEHIST=4096                     # Lines to save to disk
 HISTFILE=~/.zsh_history           # File on disk
 
 # Directory colors.
-eval "$(dircolors -b)"
+eval "$(dircolors -b ~/dotfiles/dircolors)"
 
 # General options.
 setopt AUTO_CD                    # Perform cd if command is a directory
