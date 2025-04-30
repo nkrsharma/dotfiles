@@ -33,7 +33,7 @@ augroup END
 " Syntax and coloring
 syntax on
 set background=dark
-colorscheme gruvbox
+colorscheme solarized
 
 " Indenting and tabs
 set autoindent
@@ -77,9 +77,9 @@ set incsearch
 set hlsearch
 
 " Tab shortcuts
-noremap <C-m> <Esc>:tabnew<CR>
+noremap <C-n> <Esc>:tabnew<CR>
 noremap <C-b> <Esc>:tabp<CR>
-noremap <C-n> <Esc>:tabn<CR>
+noremap <C-f> <Esc>:tabn<CR>
 
 " Pane shortcuts
 noremap <C-_> <Esc>:new<CR>

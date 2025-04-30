@@ -42,7 +42,7 @@ setopt CORRECT_ALL                # Try to correct spelling on commands
 setopt EXTENDED_HISTORY           # Keep timestamps on history entries
 setopt HIST_IGNORE_ALL_DUPS       # Remove repeated commands from history
 setopt HIST_IGNORE_SPACE          # Ignore blank commands
-setopt HIST_NO_FUNCTIONS          # Don't store function definitions.
+setopt HIST_NO_FUNCTIONS          # Don't store function definitions
 setopt HIST_REDUCE_BLANKS         # Reformat whitespace in history
 setopt INC_APPEND_HISTORY         # .. do so as commands are entered
 
