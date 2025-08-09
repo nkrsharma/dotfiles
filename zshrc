@@ -33,7 +33,7 @@ SAVEHIST=4096                     # Lines to save to disk
 HISTFILE=~/.zsh_history           # File on disk
 
 # Directory colors.
-eval "$(dircolors -b ~/dotfiles/dircolors)"
+eval "$(dircolors -b)"
 
 # General options.
 setopt AUTO_CD                    # Perform cd if command is a directory
@@ -168,7 +168,7 @@ for t in c h cc cpp; do
 done
 
 for t in jpg jpeg png JPG JPEG PNG; do
-  alias -s $t='\feh -Z --scale-down'
+  alias -s $t='run_in_background swayimg -s fit'
 done
 
 # Utility functions.

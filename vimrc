@@ -21,8 +21,6 @@ else
   echomsg 'Vundle not installed'
 endif
 
-filetype plugin indent on
-
 " Automatically change the working path to the path of the current file.
 autocmd BufNewFile,BufEnter * silent! lcd %:p:h
 
@@ -31,9 +29,10 @@ augroup autoformat_settings
 augroup END
 
 " Syntax and coloring
+filetype plugin indent on
 syntax on
 set background=dark
-colorscheme solarized
+colorscheme gruvbox
 
 " Indenting and tabs
 set autoindent
